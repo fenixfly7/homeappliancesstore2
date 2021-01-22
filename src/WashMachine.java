@@ -1,32 +1,30 @@
-public class Fridge {
-    private int ipsos;
+public class WashMachine {  private int ipsos;
     private int platos;
     private int depth;
     private String buildername;
     private String name;
     private String tipos;
     private int consumption;
+    private boolean exeipausei;
     private int capacity;
-    private int rafia;
-    private String color;
-    private boolean exeisyntyrisi;
-    private boolean exeikatapxisi;
+    private String[] thermokrasia;
+    private int posotitanerou;
 
     private static int timesCreated;
 
     /**
      * default constructor
      */
-    public Fridge()
+    public WashMachine()
     {
-        periodicMantainance();
         timesCreated++;
+        periodicMantainance();
     }
     /**
      * recommended constructor
      */
-    public Fridge(int ipsos,int platos,int depth,String buildername,String name,String tipos,int consumption,
-                  int noiseRate,int capacity,int rafia,String color,boolean exeisyntyrisi,boolean exeikatapxisi)
+    public WashMachine(int ipsos,int platos,int depth,String buildername,String name,String tipos,int consumption,
+                          boolean exeipausei, int capacity,int turnsPerSecond,String[] thermokrasia,int posotitanerou,boolean hasLockForChildren)
     {
         timesCreated++;
 
@@ -38,22 +36,20 @@ public class Fridge {
         settipos(tipos);
         setconsumption(consumption);
 
+        setPause(exeipausei);
         setCapacity(capacity);
-        setrafia(rafia);
-        setColor(color);
-        setNoFrost(exeisyntyrisi);
-        setIceExit(exeikatapxisi);
+        setthermokrasia(thermokrasia);
 
     }
     /**
-     * gets how many times the object has been created
+     * get how many times it was created
      */
     public static int getTimesCreated()
     {
         return timesCreated;
     }
     /**
-     * just showcasing the overloading feature
+     * overloading feature
      */
     private void periodicMantainance()
     {
@@ -64,11 +60,11 @@ public class Fridge {
 
     }
     /**
-     * prints every field of the class
+     * shows all fields of the washing machine class
      */
     public void showAll()
     {
-        System.out.println("--Fridge--");
+        System.out.println("--Washing Machine--");
 
         System.out.printf("ipsos: %d\n",this.ipsos);
         System.out.printf("platos: %d\n",this.platos);
@@ -78,88 +74,111 @@ public class Fridge {
         System.out.printf("tipos: %s\n",this.tipos);
         System.out.printf("Power Supply: %d\n",this.consumption);
 
+        System.out.printf("Has Pause: %b\n",this.exeipausei);
         System.out.printf("Capacity: %d\n",this.capacity);
-        System.out.printf("rafia: %d\n",this.rafia);
-        System.out.printf("Color: %s\n",this.color);
-        System.out.printf("Has No Frost: %b\n",this.exeisyntyrisi);
-        System.out.printf("Has Ice Exit: %b\n",this.exeikatapxisi);
+        System.out.printf("thermokrasia: %s\n",this.thermokrasia);
+        System.out.printf("Watter Supply: %s\n",this.posotitanerou);
         System.out.printf("Times Created: %d\n",timesCreated);
 
-    }
 
+    }
 
     /**
      * gets and sets ipsos
      */
-    public int getipsos() {
+    public int getipsos()
+    {
         return this.ipsos;
     }
-    public void setipsos(int ipsos) {
+    public void setipsos(int ipsos)
+    {
         this.ipsos = ipsos;
     }
 
     /**
      * gets and sets platos
      */
-    public int getplatos() {
+    public int getplatos()
+    {
         return this.platos;
     }
-    public void setplatos(int platos) {
+    public void setplatos(int platos)
+    {
         this.platos = platos;
     }
 
     /**
      * gets and sets depth
      */
-    public int getDepth() {
+    public int getDepth()
+    {
         return this.depth;
     }
-    public void setDepth(int depth) {
+    public void setDepth(int depth)
+    {
         this.depth = depth;
     }
 
     /**
      * gets and sets buildername
      */
-    public String getbuildername() {
+    public String getbuildername()
+    {
         return this.buildername;
     }
-    public void setbuildername(String buildername) {
-        this.buildername = buildername;
+    public void setbuildername(String buildername)
+    {
+        this.buildername=buildername;
     }
 
     /**
      * gets and sets name
      */
-    public String getName() {
+    public String getName()
+    {
         return this.name;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name)
+    {
+        this.name=name;
     }
 
     /**
      * gets and sets tipos
      */
-    public String gettipos() {
+    public String gettipos()
+    {
         return this.tipos;
     }
-    public void settipos(String tipos) {
-        this.tipos = tipos;
+    public void settipos(String tipos)
+    {
+        this.tipos=tipos;
     }
 
     /**
      * gets and sets power supply
      */
-    public int getconsumption() {
+    public int getconsumption()
+    {
         return this.consumption;
     }
-    public void setconsumption(int consumption) {
+    public void setconsumption(int consumption)
+    {
         this.consumption = consumption;
     }
 
 
+
     //exclusive
+    /**
+     * gets and sets pause
+     */
+    public boolean exeipausei() {
+        return exeipausei;
+    }
+    public void setPause(boolean exeipausei) {
+        this.exeipausei = exeipausei;
+    }
 
     /**
      * gets and sets capacity
@@ -170,40 +189,28 @@ public class Fridge {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+   
+
     /**
-     * gets and sets rafia
+     * gets and sets the thermokrasia
      */
-    public int getrafia() {
-        return rafia;
+    public String[] getthermokrasia() {
+        return thermokrasia;
     }
-    public void setrafia(int rafia) {
-        this.rafia = rafia;
+    public void setthermokrasia(String[] thermokrasia) {
+        this.thermokrasia = thermokrasia;
     }
+
     /**
-     * gets and sets color
+     * gets and sets the water supply
      */
-    public String getColor() {
-        return color;
+    public int getposotitanerou() {
+        return posotitanerou;
     }
-    public void setColor(String color) {
-        this.color = color;
+    public void setposotitanerou(int posotitanerou) {
+        this.posotitanerou = posotitanerou;
     }
-    /**
-     * gets and sets no frost
-     */
-    public boolean exeisyntyrisi() {
-        return exeisyntyrisi;
-    }
-    public void setNoFrost(boolean exeisyntyrisi) {
-        this.exeisyntyrisi = exeisyntyrisi;
-    }
-    /**
-     * gets and sets ice exit
-     */
-    public boolean exeikatapxisi() {
-        return exeikatapxisi;
-    }
-    public void setIceExit(boolean exeikatapxisi) {
-        this.exeikatapxisi = exeikatapxisi;
-    }
+
+
 }
